@@ -1,8 +1,7 @@
 // Entry point for the application
 import express from "express";
 import config from "./config.js";
-// TODO: Import the routes
-
+import router from "./router.js";
 const app = express();
 
 app.get("/", (_, res) => {
