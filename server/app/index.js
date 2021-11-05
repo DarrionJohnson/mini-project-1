@@ -2,6 +2,7 @@
 import express from "express";
 import config from "./config.js";
 import router from "./router.js";
+
 const app = express();
 
 app.get("/", (_, res) => {
@@ -10,7 +11,7 @@ app.get("/", (_, res) => {
 
 // TODO: Use json middleware (if needed)
 
-// TODO: Mount the routes (maybe 🤔 /api)
+app.use("/current-listings", router);
 
 app.listen(config.port, () => {
   console.log(`Server 🏃🏾‍♂️ at: http://localhost:${config.port}`);
