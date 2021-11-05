@@ -5,7 +5,7 @@ import router from "./router.js";
 const app = express();
 
 app.get("/", (_, res) => {
-  res.send("Hello World");
+  res.send("Hello World from mini-project");
 });
 
 // TODO: Use json middleware (if needed)
