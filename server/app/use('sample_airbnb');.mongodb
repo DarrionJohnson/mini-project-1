@@ -1,0 +1,5 @@
+use('sample_airbnb');
+
+const bnbData = db.listingsAndReviews.find({});
+
+bnbData;
