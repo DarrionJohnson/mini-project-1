@@ -1,5 +1,5 @@
 // Entry point for the application
-import express from "express";
+import express, { json } from "express";
 import config from "./config.js";
 import router from "./router.js";
 
@@ -9,7 +9,7 @@ app.get("/", (_, res) => {
   res.send("Hello World from mini-project");
 });
 
-// TODO: Use json middleware (if needed)
+app.use(express.json());
 
 app.use("/current-listings", router);
 
