@@ -16,4 +16,12 @@ router.get("/limit/:number", async (req, res) => {
   const list = await collection.find({}).limit(num).toArray();
   res.json(list);
 });
+
+// Test id for look up
+// 10096773 ||  10030955  ||  10009999
+router.get("/find/:id", async (req, res) => {
+  const find = await collection.findOne({ _id: req.params.id });
+  res.send(find).toArray();
+});
+
 export default router;
