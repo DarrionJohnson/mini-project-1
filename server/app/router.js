@@ -63,11 +63,11 @@ router.get("/", async (req, res) => {
 //   res.send(display);
 // });
 
-router.get("/limit/:number", async (req, res) => {
-  const num = Number(req.params.number);
-  const list = await collection.find({}).limit(num).toArray();
-  res.json(list);
-});
+// router.get("/limit/:number", async (req, res) => {
+//   const num = Number(req.params.number);
+//   const list = await collection.find({}).limit(num).toArray();
+//   res.json(list);
+// });
 
 // Test id for look up
 // 10096773 ||  10030955  ||  10009999
