@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
   const queries = Object.keys(req.query);
   const values = Object.values(req.query);
 
-  console.log(`Here are the Request paramaters: ${queries[0]}; ${values[0]}`);
+  console.log(`Here are the Request parameters: ${queries[0]}; ${values[0]}`);
 
   if (queries[0] === "limit") {
     console.log("limit set");
