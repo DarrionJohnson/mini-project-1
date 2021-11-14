@@ -13,6 +13,11 @@ router.get("/", async (_, res) => {
   res.send(display);
 });
 
+// router.get("/", async (_, res) => {
+//   const display = await collection.find({}).limit(20).toArray();
+//   res.send(display);
+// });
+
 router.get("/limit/:number", async (req, res) => {
   const num = Number(req.params.number);
   const list = await collection.find({}).limit(num).toArray();
