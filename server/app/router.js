@@ -76,16 +76,16 @@ router.get("/", async (req, res) => {
 //   res.send(find).toArray();
 // });
 
-router.get("/find", async (req, res) => {
-  const queries = Object.keys(req.query);
-  const values = Object.values(req.query);
-  console.log(queries, values);
+// router.get("/find", async (req, res) => {
+//   const queries = Object.keys(req.query);
+//   const values = Object.values(req.query);
+//   console.log(queries, values);
 
-  const search = await collection
-    .find({ [queries[0]]: { $regex: values[0], $options: "i" } })
-    .toArray();
+//   const search = await collection
+//     .find({ [queries[0]]: { $regex: values[0], $options: "i" } })
+//     .toArray();
 
-  res.json(search).toArray();
-});
+//   res.json(search).toArray();
+// });
 
 export default router;
