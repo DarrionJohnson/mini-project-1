@@ -21,8 +21,6 @@ router.get("/", async (req, res) => {
   console.log(`Here are the Request parameters: ${queries[0]}; ${values[0]}`);
 
   if (queries[0] === "limit") {
-    console.log("limit set");
-
     const num = Number(values);
 
     console.log(`limit the number of sets in the array to ${num}.`);
@@ -41,7 +39,29 @@ router.get("/", async (req, res) => {
 
     const display = await collection.find({}).limit(100).toArray();
     res.send(display);
-    res.send(display);
+  } else if (queries[0] === "max-price") {
+    const num = Number(values);
+    const query = { $lte: num };
+
+    console.log(
+      `Query for all: listing with a ${queries[0]} of ${num} was preformed.`
+    );
+    if (num >= 1) {
+      const display = await collection
+        .find({ price: query })
+        .limit(100)
+        .toArray();
+
+      console.log(queries, values[0]);
+      res.send(display);
+    } else {
+      res.send(
+        "Please Enter a valid number; higher than 0; for the limit amount."
+      );
+    }
+  } else if (Number(values)) {
+    const num = Number(values);
+
     console.log(`Query for all: ${num} ${queries[0]} Was preformed.`);
 
     const display = await collection
