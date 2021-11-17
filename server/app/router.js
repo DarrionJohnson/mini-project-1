@@ -11,6 +11,7 @@ const collection = client
 // Routes for current-listings
 // Limit Check
 // Standard Outcomes Check
+// Max-Price Check
 // ID Check
 // Query Check
 
