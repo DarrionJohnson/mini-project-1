@@ -43,9 +43,11 @@ router.get("/", async (req, res) => {
     console.log(`Query for all: ${num} ${queries[0]} Was preformed.`);
 
     const display = await collection
-      .find({ _id: { $regex: values[0], $options: "i" } })
+      .find({ [queries[0]]: num })
+      .limit(100)
       .toArray();
 
+    console.log(queries, values[0]);
     res.send(display);
   } else {
     console.log(`Query: ${queries[0]}; Was quired.`);
