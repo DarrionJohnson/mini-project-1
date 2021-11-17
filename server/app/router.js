@@ -91,6 +91,11 @@ router.get("/:id", async (req, res) => {
   const find = await collection.findOne({ _id: req.params.id });
   res.send(find).toArray();
 
+router.get("/reviews/:id", async (req, res) => {
+  const find = await collection.findOne({ _id: req.params.id });
+  res.send(find).toArray();
+});
+
 // router.get("/limit/:number", async (req, res) => {
 //   const num = Number(req.params.number);
 //   const list = await collection.find({}).limit(num).toArray();
