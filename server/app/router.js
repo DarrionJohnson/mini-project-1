@@ -35,7 +35,7 @@ router.get("/", async (req, res) => {
       );
     }
   } else if (queries[0] === undefined) {
-    console.log("No queries ");
+    console.log("No queries were preformed.");
 
     const display = await collection.find({}).limit(50).toArray();
     res.send(display);
