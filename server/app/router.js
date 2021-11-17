@@ -85,10 +85,11 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.get("/", async (_, res) => {
-//   const display = await collection.find({}).limit(20).toArray();
-//   res.send(display);
-// });
+// Test id for look up
+// 10096773 ||  10030955  ||  10009999 ||  10051164
+router.get("/:id", async (req, res) => {
+  const find = await collection.findOne({ _id: req.params.id });
+  res.send(find).toArray();
 
 // router.get("/limit/:number", async (req, res) => {
 //   const num = Number(req.params.number);
