@@ -25,6 +25,8 @@ router.get("/", async (req, res) => {
 
     const num = Number(values);
 
+    console.log(`limit the number of sets in the array to ${num}.`);
+
     if (num >= 1) {
       const display = await collection.find({}).limit(num).toArray();
 
