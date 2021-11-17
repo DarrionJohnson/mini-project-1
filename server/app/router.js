@@ -37,7 +37,8 @@ router.get("/", async (req, res) => {
   } else if (queries[0] === undefined) {
     console.log("No queries were preformed.");
 
-    const display = await collection.find({}).limit(50).toArray();
+    const display = await collection.find({}).limit(100).toArray();
+    res.send(display);
     res.send(display);
   } else if (queries[0] === `id` || queries[0] === `_id`) {
     console.log(`Id was quired.`);
